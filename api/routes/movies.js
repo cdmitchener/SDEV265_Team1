@@ -9,17 +9,18 @@ import {
 import Movie from "../models/Movie.js";
 // // https://bobbyhadz.com/blog/javascript-requested-module-not-provide-export-named-default
 // import { createError } from "../utils/error.js";
+import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 //CREATE
-router.post("/", createMovie);
+router.post("/", verifyAdmin, createMovie);
 
 //UPDATE
-router.put("/:id", updateMovie);
+router.put("/:id", verifyAdmin, updateMovie);
 
 //DELETE
-router.delete("/:id", deleteMovie);
+router.delete("/:id", verifyAdmin, deleteMovie);
 
 //GET
 router.get("/:id", getMovie);

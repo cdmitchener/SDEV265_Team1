@@ -1,0 +1,431 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Pathway Gothic One', sans-serif;
+    
+    
+}
+
+body{
+    background-color: #242424;
+}
+
+.header{
+    min-height: 70vh;
+    width: 100%;
+    background-image: url(images/moviechairs.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+.logo{
+    color: whitesmoke;
+    font-size: 30px;
+    text-decoration: underline #fdff00;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    z-index: 1;
+}
+
+nav img{
+    width: 160px;
+    
+}
+
+.nav-links{
+    flex: 1;
+    text-align: left;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 5px 40px;
+    position: relative;
+}
+
+.nav-links ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 19px;
+
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #fdff00;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+.text-box{
+    width: 90%;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.text-box h1{
+    font-size: 70px;
+    margin: 0 0 80px;
+    text-decoration: underline #fdff00;
+    color: whitesmoke;
+    padding-bottom: 90px;
+    
+}
+
+
+
+.reg-btn{
+    position: relative;
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    height: 36px;
+    border-radius: 18px;
+    width: 90px;
+    font-weight: bold;
+    margin-right: 50px;
+    margin-left: 40px;
+    font-size: 19px;
+    cursor: pointer;
+    border-color: #fdff00;
+    
+}
+
+.reg-btn:hover{
+    background-color: #ffff00db;
+}
+
+.reg-btn:active{
+    background-color: #ffff0096;
+}
+
+.login-btn{
+    position: relative;
+    background-color: whitesmoke;
+    color: black;
+    border: none;
+    height: 36px;
+    border-radius: 18px;
+    width: 90px;
+    font-weight: bold;
+    font-size: 19px;
+    cursor: pointer;
+    
+}
+
+.login-btn:hover{
+    background-color: #ffff00db;
+}
+
+.login-btn:active{
+    background-color: #ffff0096;
+}
+
+
+
+/*-------------------------------------------------------------- movies-----------------------------------------------------*/
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    border-top: 3px solid #fdff00;
+    
+    
+}
+
+.heading h2{
+    color: whitesmoke;
+    font-size: 60px;
+    text-decoration: underline #fdff00;
+    padding: 30px 70px 20px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-1{
+   flex-basis: 30%;
+   padding: 10px;
+   min-width: 100px;
+   margin-bottom: 30px; 
+   transition: transform 0.5s;
+   
+}
+
+.col-1 img{
+    width: 50%;
+    padding-top: 10px;
+    padding-left: 115px;
+    
+}
+
+h2{
+    color: whitesmoke;
+    padding-left: 115px;
+    font-size: 35px;
+}
+
+p{
+    color: whitesmoke;
+    padding-left: 115px;
+    font-size: 18px;
+    text-decoration: underline #fdff00;
+}
+
+.col-1:hover{
+    transform: translateY(-5px);
+}
+
+
+
+/*-------------------------------------------------------------- coming soon ---------------------------------------------*/
+
+.soon-section{
+    min-height: 70vh;
+    width: 100%;
+    background-image: url(images/comingsoon.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-top: 3px solid #fdff00;
+}
+
+.soon-text{
+    width: 90%;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.soon-text h3{
+    font-size: 60px;
+    color: whitesmoke;
+    font-weight: bold;
+    float: right;
+    position: relative;
+    left: 35px;
+}
+
+.comesoon-btn{
+   position: relative;
+   top: 100px;
+   left: 740px;
+   background-color: whitesmoke;
+   color: black;
+   height: 50px;
+   border-radius: 25px;
+   width: 120px;
+   font-weight: bold;
+   font-size: 19px;
+   border: none;
+   cursor: pointer;
+}
+
+.comesoon-btn:hover{
+    background-color: #ffff00db;
+}
+
+.comesoon-btn:active{
+    background-color: #ffff0096;
+}
+
+/*-------------------------------------------------------------- coming soon ---------------------------------------------*/
+
+.concession-section{
+    min-height: 70vh;
+    width: 100%;
+    background-image: url(images/concession.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-top: 3px solid #fdff00;
+    border-bottom: 3px solid #fdff00;
+
+}
+
+.concession-text{
+    width: 90%;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.concession-text h4{
+    font-size: 60px;
+    color: whitesmoke;
+    font-weight: bold;
+    float: left;
+    position: relative;
+    left: 55px;
+    
+}
+
+.concession-btn{
+    position: relative;
+    top: 100px;
+    right: 625px;
+    background-color: whitesmoke;
+   color: black;
+   height: 50px;
+   border-radius: 25px;
+   width: 120px;
+   font-weight: bold;
+   font-size: 19px;
+   border: none;
+   cursor: pointer;
+}
+
+.concession-btn:hover{
+    background-color: #ffff00db;
+}
+
+.concession-btn:active{
+    background-color: #ffff0096;
+}
+/*-------------------------------------------------------------- Footer ---------------------------------------------*/
+
+.footer{
+    
+    background-color: #242424;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    font-size: 14px;
+    padding: 60px 0 20px;
+    color: whitesmoke;
+
+}
+
+.footer h4 {
+    color: whitesmoke;
+    bottom: 62px;
+    font-size: 35px;
+    text-decoration: underline #fdff00;
+    position: relative;
+    right: 30px;
+}
+
+.footer-col-1 img{
+    position: relative;
+    bottom: 47px;
+    margin-right: 15px;
+}
+
+.footer-col-2 .footer-col-3 .footer-col-4{
+   min-width: 250px;
+   margin-bottom: 20px; 
+}
+
+.footer-col-2 h5{
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-decoration: underline #fdff00;
+    position: relative;
+    bottom: 16px;
+
+}
+
+.footer-col-2 ul li{
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    list-style-type: none;
+    position: relative;
+    bottom: 16px;
+    
+}
+
+.footer-col-3 h5{
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-decoration: underline #fdff00;
+}
+
+.footer-col-3 ul li{
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    list-style-type: none;
+
+}
+
+.footer-col-4 h5{
+    font-size: 30px;
+    margin-bottom: 15px;
+    text-decoration: underline #fdff00;
+    position: relative;
+    bottom: 40px;
+}
+
+.footer-col-4 ul li{
+    font-size: 20px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    list-style-type: none; 
+    position: relative;
+    bottom: 40px;
+}
+
+.footer-logo{
+    position: relative;
+    text-align: center;
+}
+
+.footer-logo h6{
+    text-decoration: underline #fdff00;
+    font-size: 35px;
+    margin-top: 30px;
+    margin-bottom: 3px;
+}
+
+.footer-logo p2{
+ font-size: 17px;
+}
+
+.copyright-logo{
+    text-align: left;
+    position: relative;
+    margin-left: 20px;
+}
+
+.copyright-logo p3{
+    font-size: 17px;
+}
