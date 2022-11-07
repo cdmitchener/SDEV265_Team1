@@ -1,3 +1,8 @@
+* {
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-weight: bold;
+}
+
 .navbar{
     display: flex;
     padding: 2% 6%;
@@ -17,7 +22,7 @@
 
 .logo{
     color: whitesmoke;
-    font-size: 30px;
+    font-size: 35px;
     text-decoration: underline rgb(220, 198, 32);
 }
 
@@ -29,6 +34,7 @@
     cursor: pointer;
     color: #101010;
     background-color: rgb(220, 198, 32);
+    font-size: 18px;
     font-weight: bold;
 }
 

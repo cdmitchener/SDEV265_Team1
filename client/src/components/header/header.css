@@ -1,0 +1,42 @@
+.header {
+    min-height: 50vh;
+    width: 100%;
+    background-image: url(images/moviechairs.jpg);
+    background-position: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    background-size: cover;
+}
+
+.headerContainer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+    color: #fefefe;
+}
+
+.headerList {
+    display: flex;
+    gap: 40px;
+}
+
+.headerListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.text-box {
+    width: 90%;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 28px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: underline rgb(220, 198, 32);
+    padding-bottom: 120px;
+}
