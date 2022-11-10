@@ -8,6 +8,7 @@
     display: flex;
     background-size: cover;
     position: relative;
+    border-bottom: 3px solid #febb02;
 }
 
 .headerContainer {
@@ -116,6 +117,7 @@ h1.header-title {
     border: none;
     outline: none;
     cursor: pointer;
+    z-index: 1;
 }
 
 .options {
@@ -126,6 +128,7 @@ h1.header-title {
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .optionItem {

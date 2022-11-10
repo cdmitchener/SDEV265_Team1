@@ -1,7 +1,33 @@
 .homeContainer {
-    margin-top: 50px;
+    background-color: #1d1d1d;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    z-index: -1;
+}
+
+.homeTitle {
+    border-top: 2px solid #febb02;
+    padding-top: 20px;
+    color: #fefefe;
+    width: 1024px;
+    font-size: 42px;
+}
+
+.comingSoon {
+    border-top: 2px solid #febb02;
+    padding-top: 20px;
+    color: #fefefe;
+    width: 1024px;
+    font-size: 42px;
+}
+
+.concessions {
+    border-top: 3px solid #febb02;
+    width: 100%;
+    height: 500px;
+    background-image: url(images/popcorn.jpg);
+    background-size: cover;
 }

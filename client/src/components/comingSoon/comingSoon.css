@@ -1,0 +1,39 @@
+.cs {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 80px;
+    padding-bottom: 50px;
+}
+
+.csItem {
+    flex: 1;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.csImg {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.csName {
+    padding-top: 10px;
+    color: #ececec;
+    font-size: 25px;
+}
+
+.csDate {
+    padding-bottom: 10px;
+    color: #d1d1d1;
+    font-size: 18px;
+    font-weight: lighter;
+}
