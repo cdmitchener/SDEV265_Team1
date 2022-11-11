@@ -7,10 +7,11 @@
 }
 
 body{
-    background-color: #242424;
+    background-color: black;
 }
 
-.header{
+
+.home-header{
     min-height: 70vh;
     width: 100%;
     background-image: url(images/moviechairs.jpg);
@@ -25,6 +26,7 @@ body{
     color: whitesmoke;
     font-size: 30px;
     text-decoration: underline #fdff00;
+    cursor: pointer;
 }
 
 nav{
@@ -58,7 +60,7 @@ nav img{
 .nav-links ul li a{
     color: whitesmoke;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 20px;
 
 }
 
@@ -147,16 +149,13 @@ nav img{
 
 
 
-/*-------------------------------------------------------------- movies-----------------------------------------------------*/
+/*---------------------------------- movies section-----------------------------------------------------*/
 
 .heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     border-top: 3px solid #fdff00;
-    
-    
 }
 
 .heading h2{
@@ -164,6 +163,7 @@ nav img{
     font-size: 60px;
     text-decoration: underline #fdff00;
     padding: 30px 70px 20px;
+    
 }
 
 .row{
@@ -208,7 +208,7 @@ p{
 
 
 
-/*-------------------------------------------------------------- coming soon ---------------------------------------------*/
+/*----------------------------------- coming soon section---------------------------------------------*/
 
 .soon-section{
     min-height: 70vh;
@@ -263,9 +263,9 @@ p{
     background-color: #ffff0096;
 }
 
-/*-------------------------------------------------------------- coming soon ---------------------------------------------*/
+/*---------------------------------- concession section ---------------------------------------------*/
 
-.concession-section{
+.concess-section{
     min-height: 70vh;
     width: 100%;
     background-image: url(images/concession.jpg);
@@ -273,11 +273,11 @@ p{
     background-size: cover;
     position: relative;
     border-top: 3px solid #fdff00;
-    border-bottom: 3px solid #fdff00;
+    
 
 }
 
-.concession-text{
+.concess-text{
     width: 90%;
     color: whitesmoke;
     position: absolute;
@@ -288,7 +288,7 @@ p{
 
 }
 
-.concession-text h4{
+.concess-text h4{
     font-size: 60px;
     color: whitesmoke;
     font-weight: bold;
@@ -298,7 +298,7 @@ p{
     
 }
 
-.concession-btn{
+.concess-btn{
     position: relative;
     top: 100px;
     right: 625px;
@@ -313,24 +313,25 @@ p{
    cursor: pointer;
 }
 
-.concession-btn:hover{
+.concess-btn:hover{
     background-color: #ffff00db;
 }
 
-.concession-btn:active{
+.concess-btn:active{
     background-color: #ffff0096;
 }
-/*-------------------------------------------------------------- Footer ---------------------------------------------*/
+/*--------------------------------------- Footer ---------------------------------------------*/
 
 .footer{
     
-    background-color: #242424;
+    background-color: black;
     background-position: center;
     background-size: cover;
     position: relative;
     font-size: 14px;
     padding: 60px 0 20px;
     color: whitesmoke;
+    border-top: 3px solid #fdff00 ;
 
 }
 
@@ -429,3 +430,258 @@ p{
 .copyright-logo p3{
     font-size: 17px;
 }
+
+/*---------------------------------- coming soon page-----------------------------------------------------*/
+
+.comingsoon-header{
+    min-height: 70vh;
+    width: 100%;
+    background-image: url(images/comingsoonheader.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.cs-text-box{
+    width: 90%;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cs-text-box h1{
+    font-size: 90px;
+    position: relative;
+    text-decoration: underline #fdff00;
+    color: whitesmoke;
+    top: 40px;
+    right: 488px;
+}
+
+.cs-heading{
+    position: relative;
+    text-align: center;
+    border-top: 3px solid #fdff00;
+}
+
+.cs-heading h2{
+    color: whitesmoke;
+    font-size: 60px;
+    text-decoration: underline #fdff00;
+    padding: 30px 70px 20px;
+    
+}
+
+.col-1 p2{
+    color: whitesmoke;
+    padding-left:  115px;
+    position:relative;
+    top: 5px;
+    font-size: 18px;
+    text-decoration: underline #fdff00;
+}
+
+.wakanda-section{
+    min-height: 70vh;
+    width: 100%;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.wakanda-section img {
+    height: 70vh;
+    width: 43%;
+    position: relative;
+    float: left;
+    
+    
+}
+
+
+.wakanda-text h3{
+    color: whitesmoke;
+    text-decoration: underline #fdff00;
+    font-size: 70px;
+    position: relative;
+    padding-top: 170px;
+    padding-right: 330px;
+    float: right;
+    
+}
+
+.wakanda-text p{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-right: 85px;
+    float: right;
+    
+}
+
+
+/*---------------------------------- fooddrink-----------------------------------------------------*/
+
+.food-header{
+min-height: 70vh;
+    width: 100%;
+    background-image: url(images/conheader.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.food-text-box{
+    width: 90%;
+    color: whitesmoke;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+
+}
+
+.food-text-box h1{
+    font-size: 130px;
+    margin: 0 0 80px;
+    text-decoration: underline #fdff00;
+    color: whitesmoke;
+    padding-bottom: 20px;
+    padding-top: 190px;
+    padding-left: 50px;
+    
+}
+
+.girl-section{
+    min-height: 70vh;
+    width: 100%;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-top: 3px solid #fdff00;
+    
+}
+
+.girl-section img{
+    min-height: 70vh;
+    width: 50%;
+    position: relative;
+    float: right;
+}
+
+.statement-text h5{
+    color: white;
+    text-decoration: underline #fdff00;
+    font-size: 60px;
+    position: relative;
+    padding-top: 170px;
+    
+    float: left;
+    padding-left: 120px;
+
+}
+
+.statement-text p{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-right: 50px;
+    float: left;
+    
+}
+
+.cocacola-section{
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+    
+}
+
+.cocacola-section img{
+    min-height: 70vh;
+    width: 50%;
+    position: relative;
+    align-items: center;
+}
+
+.coke-text h6{
+    color: white;
+    text-decoration: underline #fdff00;
+    font-size: 60px;
+    position: relative;
+    bottom: 400px;
+    
+    float: right;
+    padding-right: 125px;
+ 
+}
+
+.coke-text p6{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+   bottom: 310px;
+    float: right;
+    left: 405px;
+
+}
+
+.blackdrink-section{
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+
+.blackdrink-section img{
+    min-height: 70vh;
+    width: 50%;
+    position: relative;
+    float: right;
+    left: 574px;
+    bottom: 51px;
+}
+
+.coke-text h1{
+    position: relative;
+    float: left;
+    bottom: 410px;
+    font-size: 60px;
+    text-decoration: underline #fdff00;
+    left: 120px;
+    color: whitesmoke;
+}
+
+.popcandy-section{
+    min-height: 70vh;
+    width: 100%;
+    background-image: url(images/popcorn-gfb3ede201_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+
+
+
+
+    
+
+
+
