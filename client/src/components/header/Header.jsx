@@ -3,11 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import DatePicker from "react-datepicker";
 import { useState } from "react";
 import { setHours, setMinutes} from "date-fns";
+import { useNavigate } from "react-router-dom";
 import "./header.css"
 import "react-datepicker/dist/react-datepicker.css";
 
 
 const Header = ({type}) => {
+  const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState(
     // default will be current date at noon
     setHours(setMinutes(new Date(), 0), 12)
@@ -18,6 +20,8 @@ const Header = ({type}) => {
     children: 0,
   });
 
+  const navigate = useNavigate();
+
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -25,6 +29,10 @@ const Header = ({type}) => {
       };
     });
   };
+
+  const handleSearch = () => {
+    navigate("/movies", {state: {title, startDate, options}});
+};
 
   return (
     <div className="header">
@@ -59,7 +67,10 @@ const Header = ({type}) => {
           <div className="headerSearch">
           <div className="headerSearchItem">
           <FontAwesomeIcon icon={faFilm} className="headerIcon"/>
-            <input type="text" placeholder="What movie would you like to see?" className="headerSearchInput" />
+            <input
+              type="text"
+              placeholder="What movie would you like to see?" className="headerSearchInput"
+              onChange={e=>setTitle(e.target.value)} />
           </div>
           <div className="headerSearchItem">
           <FontAwesomeIcon icon={faCalendarDays} className="headerIcon"/>
@@ -115,7 +126,7 @@ const Header = ({type}) => {
               </div>}
           </div>
           <div className="headerSearchItem">
-            <button className="header-btn">Search</button>
+            <button className="header-btn" onClick={handleSearch}>Search</button>
           </div>
         </div></>}
       </div>
