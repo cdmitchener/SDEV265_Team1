@@ -13,6 +13,9 @@ const Footer = () => {
             </ul>
             <ul className="fList">
                 <li className="fListItem">Contact Us</li>
+                <li className="fListItem">Careers</li>
+                <li className="fListItem">GCC Stubs</li>
+                <li className="fListItem">Offers & Promotions</li>
                 <li className="fListItem">Terms & Conditions</li>
             </ul>
         </div>

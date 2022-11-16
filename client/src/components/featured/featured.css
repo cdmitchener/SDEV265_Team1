@@ -11,11 +11,17 @@
 .featuredItem {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.5s, filter 0.2s;
+}
+
+.featuredItem:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(8px 8px 8px rgb(9, 9, 9));
 }
 
 .featuredImg {
-    /* flex-basis: 30%; */
+    border-radius: 10px;
     object-fit: cover;
     max-height: 370px;
 }

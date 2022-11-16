@@ -1,10 +1,13 @@
 import "./list.css"
 import Navbar from '../../components/navbar/Navbar'
 import Header from '../../components/header/Header'
+import SearchItem from "../../components/searchItem/SearchItem"
+import Footer from '../../components/footer/Footer'
 import { useLocation } from "react-router-dom"
 import { useState } from "react"
 import DatePicker from "react-datepicker";
 import { setHours, setMinutes} from "date-fns";
+
 
 const List = () => {
 
@@ -26,7 +29,7 @@ const List = () => {
               <input type="text" placeholder={title}/>
             </div>
             <div className="lsItem">
-              <label>Date</label>
+              <label>Date & Time</label>
               <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -63,6 +66,17 @@ const List = () => {
                   <input type="number" min={0} className="lsOptionInput" placeholder={options.children}/>
                 </div>
                 <div className="lsOptionItem">
+                  <span className="lsOptionText">Rating</span>
+                  <select className="lsOptionSelect">
+                    <option value="all">All</option>
+                    <option value="g">G</option>
+                    <option value="pg">PG</option>
+                    <option value="pg-13">PG-13</option>
+                    <option value="r">R</option>
+                    <option value="nc-17">NC-17</option>
+                  </select>
+                </div>
+                <div className="lsOptionItem">
                   <span className="lsOptionText">Genre</span>
                   <select className="lsOptionSelect">
                     <option value="all">All</option>
@@ -88,9 +102,16 @@ const List = () => {
             </div>
             <button>SEARCH</button>
           </div>
-          <div className="listResult"></div>
+          <div className="listResult">
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+          </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }

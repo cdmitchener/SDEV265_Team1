@@ -20,10 +20,19 @@
     justify-content: space-between;
 }
 
-.logo{
+/* .logo{
+    display: inline-block;
     color: whitesmoke;
     font-size: 35px;
     text-decoration: underline #febb02;
+} */
+
+.logoImg{
+    display: inline-block;
+    height: 100px;
+    width: 230px;
+    background-image: url(./images/GCC_Logo2x.png);
+    z-index: 5;
 }
 
 .navButton{

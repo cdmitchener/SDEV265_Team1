@@ -13,6 +13,7 @@ const Home = () => {
       <Navbar/>
       <Header/>
       <div className="homeContainer">
+        <h1 className="nowShowing">Showing Now</h1>
         <Featured/>
         <h1 className="homeTitle">Browse by genre</h1>
         <MovieList/>

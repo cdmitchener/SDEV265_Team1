@@ -1,4 +1,4 @@
-import {faFilm, faHourglassHalf, faCookieBite, faMapLocationDot, faCalendarDays, faPerson} from "@fortawesome/free-solid-svg-icons"
+import { faFilm, faHourglassHalf, faCookieBite, faMapLocationDot, faCalendarDays, faPerson } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import DatePicker from "react-datepicker";
 import { useState } from "react";
@@ -96,7 +96,7 @@ const Header = ({type}) => {
                 setHours(setMinutes(new Date(), 0), 23),
               ]}
               dateFormat="MMMM d, yyyy h:mm aa"
-              className="date"
+              className="headerDate"
             />
           </div>
           <div className="headerSearchItem">

@@ -1,11 +1,23 @@
 .homeContainer {
-    background-color: #1d1d1d;
+    background-image: linear-gradient(-45deg, #131313, #212121);
+    /* background-color: #1d1d1d; */
     padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
     z-index: -1;
+}
+
+.nowShowing {
+    text-align: center;
+    color: #fefefe;
+    width: fit-content;
+    font-size: 60px;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #febb02
 }
 
 .homeTitle {

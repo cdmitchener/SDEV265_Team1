@@ -50,7 +50,7 @@ h1.header-title {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 57px;
+    font-size: 50px;
     transform: translate(-50%, -50%);
     text-align: center;
     text-decoration: underline #febb02;
@@ -93,7 +93,7 @@ h1.header-title {
 }
 
 .headerIcon {
-    color: #7d7d7d;
+    color: #c5c5c5;
 }
 
 .headerSearchItem {
@@ -107,14 +107,18 @@ h1.header-title {
     width: 200px;
     font-size: 18px;
     border: none;
+    border-radius: 5px;
+    padding: 5px;
     outline: none;
 }
 
-.date {
+.headerDate {
     width: 160px;
     font-size: 18px;
     position: relative;
     border: none;
+    border-radius: 5px;
+    padding: 5px;
     outline: none;
     cursor: pointer;
     z-index: 1;
@@ -164,4 +168,9 @@ h1.header-title {
 
 .optionCounterButton:disabled {
     cursor: not-allowed;
+}
+
+.header-btn {
+    padding: 5px 10px;
+    font-size: 18px;
 }

@@ -14,6 +14,12 @@
     overflow: hidden;
     cursor: pointer;
     background-color: rgb(65, 65, 65);
+    transition: transform 0.5s, filter 0.2s;
+}
+
+.mListItem:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(8px 8px 8px rgb(9, 9, 9));
 }
 
 .mListImg {
