@@ -17,7 +17,7 @@ router.post("/:movieid", verifyAdmin, createTheater);
 router.put("/:id", verifyAdmin, updateTheater);
 
 //DELETE
-router.delete("/:id", verifyAdmin, deleteTheater);
+router.delete("/:id/movieid", verifyAdmin, deleteTheater);
 
 //GET
 router.get("/:id", getTheater);

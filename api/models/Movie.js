@@ -33,7 +33,7 @@ const MovieSchema = new mongoose.Schema({
     min: 0,
     max: 5,
   },
-  seats: {
+  theaters: {
     type: [String],
   },
   featured: {

@@ -39,6 +39,13 @@ export const updateTheater = async (req, res, next) => {
 export const deleteTheater = async (req, res, next) => {
   try {
     await Theater.findByIdAndDelete(req.params.id);
+    try {
+      await Movie.findByIdAndUpdate(movieId, {
+        $pull: { theaters: req.params.id },
+      });
+    } catch (err) {
+      next(err);
+    }
     res.status(200).json("Theater has been deleted from the database.");
   } catch (err) {
     next(err);
@@ -47,8 +54,8 @@ export const deleteTheater = async (req, res, next) => {
 
 export const getTheater = async (req, res, next) => {
   try {
-    const room = await Theater.findById(req.params.id);
-    res.status(200).json(room);
+    const theater = await Theater.findById(req.params.id);
+    res.status(200).json(theater);
   } catch (err) {
     next(err);
   }
