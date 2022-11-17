@@ -16,12 +16,10 @@ const List = () => {
   const [title, setTitle] = useState(location.state.title);
   const [startDate, setStartDate] = useState(location.state.startDate);
   const [options, setOptions] = useState(location.state.options);
-  const [rating, setRating] = useState(undefined);
-  const [genre, setGenre] = useState(undefined);
 
-  const { data, loading, error, reFetch } = useFetch(`/movies?title=${title}&rating=${rating}&genre=${genre}`);
+  const { data, loading, error, reFetch } = useFetch(`/movies?title=${title}`);
 
-  const handleClick = ()=> {
+  const handleClick = () => {
     reFetch();
   }
 
@@ -76,7 +74,7 @@ const List = () => {
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">Rating</span>
-                  <select onChange={e=>setRating(e.target.value)} className="lsOptionSelect">
+                  <select className="lsOptionSelect">
                     <option value="All">All</option>
                     <option value="G">G</option>
                     <option value="PG">PG</option>
@@ -87,7 +85,7 @@ const List = () => {
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">Genre</span>
-                  <select onChange={e=>setGenre(e.target.value)} className="lsOptionSelect">
+                  <select className="lsOptionSelect">
                     <option value="all">All</option>
                     <option value="Action">Action</option>
                     <option value="Drama">Drama</option>
@@ -122,7 +120,7 @@ const List = () => {
       </div>
       <Footer/>
     </div>
-  )
-}
+  );
+};
 
 export default List

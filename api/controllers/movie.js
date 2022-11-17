@@ -55,29 +55,21 @@ export const getMovies = async (req, res, next) => {
   }
 };
 
-export const featuredMovie = async (req, res, next) => {
-  const featured = req.query.featured;
-  try {
-    const list = await Promise.all(
-      featured.map((featured) => {
-        return Movie.countDocuments({ featured: featured });
-      })
-    );
-    res.status(200).json(list);
-  } catch (err) {
-    next(err);
-  }
-};
-
 export const countByRating = async (req, res, next) => {
-  const ratings = req.query.ratings.split(",");
   try {
-    const list = await Promise.all(
-      ratings.map((rating) => {
-        return Movie.countDocuments({ rating: rating });
-      })
-    );
-    res.status(200).json(list);
+    const gCount = await Movie.countDocuments({ genre: "G" });
+    const pgCount = await Movie.countDocuments({ genre: "PG" });
+    const pg13Count = await Movie.countDocuments({ genre: "PG13" });
+    const rCount = await Movie.countDocuments({ genre: "R" });
+    const nc17Count = await Movie.countDocuments({ genre: "NC17" });
+
+    res.status(200).json([
+      { type: "G", count: gCount },
+      { type: "PG", count: pgCount },
+      { type: "PG13", count: pg13Count },
+      { type: "R", count: rCount },
+      { type: "NC17", count: nc17Count },
+    ]);
   } catch (err) {
     next(err);
   }

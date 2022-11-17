@@ -1,12 +1,12 @@
 import { faFilm, faHourglassHalf, faCookieBite, faMapLocationDot, faCalendarDays, faPerson } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import DatePicker from "react-datepicker";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { setHours, setMinutes} from "date-fns";
 import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/AuthContext";
 import "./header.css"
 import "react-datepicker/dist/react-datepicker.css";
-
 
 const Header = ({type}) => {
   const [title, setTitle] = useState("");
@@ -30,8 +30,11 @@ const Header = ({type}) => {
     });
   };
 
+  const {dispatch} = useContext(SearchContext)
+
   const handleSearch = () => {
-    navigate("/movies", {state: {title, startDate, options}});
+    dispatch({type:"NEW_SEARCH", payload: { title, startDate, options }})
+    navigate("/movies", {state: { title, startDate, options }});
 };
 
   return (
@@ -76,7 +79,7 @@ const Header = ({type}) => {
           <FontAwesomeIcon icon={faCalendarDays} className="headerIcon"/>
             <DatePicker
               selected={startDate}
-              onChange={(date) => setStartDate(date)}
+              onChange={(startDate) => setStartDate(startDate)}
               showTimeSelect
               includeTimes={[
                 setHours(setMinutes(new Date(), 0), 9),
