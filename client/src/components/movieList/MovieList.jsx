@@ -1,5 +1,5 @@
+import "./movieList.css";
 import useFetch from "../../hooks/useFetch";
-import "./movieList.css"
 
 const MovieList = () => {
     const { data, loading, error } = useFetch("/movies/countByGenre");
@@ -24,7 +24,7 @@ const MovieList = () => {
                         <div className="mListItem" key={i}>
                             <img
                              src={img}
-                             alt="Action genre"
+                             alt="Genre"
                              className="mListImg"
                             />
                             <div className="mListTitles">

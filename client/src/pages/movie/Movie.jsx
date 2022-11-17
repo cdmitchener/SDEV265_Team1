@@ -2,14 +2,19 @@ import "./movie.css"
 import Navbar from "../../components/navbar/Navbar"
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
+import useFetch from "../../hooks/useFetch"
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock, faCircleXmark, faCircleChevronLeft, faCircleChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { useLocation } from "react-router-dom"
 
 export const Movie = () => {
-
+  const location = useLocation()
+  const id = location.split("/"[2]);
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+
+  // const { data, loading, error } = useFetch(`/movies/${id}`)
 
   const images = [
     {

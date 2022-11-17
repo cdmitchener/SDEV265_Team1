@@ -1,21 +1,21 @@
 import "./searchItem.css"
 
-const SearchItem = () => {
+const SearchItem = ({item}) => {
   return (
     <div className="searchItem">
-        <img src="https://upload.wikimedia.org/wikipedia/en/e/e8/Ticket_to_Paradise_poster.jpg" alt="" className="siImg" />
+        <img src={item.images[0]} alt="" className="siImg" />
         <div className="siDesc">
-            <h1 className="siTitle">Movie</h1>
-            <span className="rating">PG-13</span>
-            <span className="genre">Action</span>
-            <span className="theaterType">Standard</span>
+            <h1 className="siTitle">{item.title}</h1>
+            <span className="rating">{item.rating}</span>
+            <span className="genre">{item.genre}</span>
+            <span className="theaterType">{item.theaters[0]}</span>
         </div>
         <div className="siDetails">
             <div className="siSummary">
                 Summary
             </div>
             <div className="siSummaryDetails">
-                <span>Details</span>
+                <span>{item.summary}</span>
                 <button>Purchase Tickets</button>
             </div>
         </div>

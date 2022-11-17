@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar/Navbar'
 import Header from '../../components/header/Header'
 import SearchItem from "../../components/searchItem/SearchItem"
 import Footer from '../../components/footer/Footer'
+import useFetch from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom"
 import { useState } from "react"
 import DatePicker from "react-datepicker";
@@ -15,6 +16,14 @@ const List = () => {
   const [title, setTitle] = useState(location.state.title);
   const [startDate, setStartDate] = useState(location.state.startDate);
   const [options, setOptions] = useState(location.state.options);
+  const [rating, setRating] = useState(undefined);
+  const [genre, setGenre] = useState(undefined);
+
+  const { data, loading, error, reFetch } = useFetch(`/movies?title=${title}&rating=${rating}&genre=${genre}`);
+
+  const handleClick = ()=> {
+    reFetch();
+  }
 
   return (
     <div>
@@ -67,26 +76,26 @@ const List = () => {
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">Rating</span>
-                  <select className="lsOptionSelect">
-                    <option value="all">All</option>
-                    <option value="g">G</option>
-                    <option value="pg">PG</option>
-                    <option value="pg-13">PG-13</option>
-                    <option value="r">R</option>
-                    <option value="nc-17">NC-17</option>
+                  <select onChange={e=>setRating(e.target.value)} className="lsOptionSelect">
+                    <option value="All">All</option>
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG13">PG13</option>
+                    <option value="R">R</option>
+                    <option value="NC17">NC17</option>
                   </select>
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">Genre</span>
-                  <select className="lsOptionSelect">
+                  <select onChange={e=>setGenre(e.target.value)} className="lsOptionSelect">
                     <option value="all">All</option>
-                    <option value="action">Action</option>
-                    <option value="drama">Drama</option>
-                    <option value="romance">Romance</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="family">Family</option>
-                    <option value="scifi">Sci-fi</option>
-                    <option value="horror">Horror</option>
+                    <option value="Action">Action</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Family">Family</option>
+                    <option value="Scifi">Scifi</option>
+                    <option value="Horror">Horror</option>
                   </select>
                 </div>
                 <div className="lsOptionItem">
@@ -100,14 +109,14 @@ const List = () => {
               </div>
             </div>
             </div>
-            <button>SEARCH</button>
+            <button onClick={handleClick}>SEARCH</button>
           </div>
           <div className="listResult">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+            {loading ? "Loading results..." : <>
+            {data.map(item=>(
+              <SearchItem item={item} key={item._id}/>
+            ))}
+            </>}
           </div>
         </div>
       </div>

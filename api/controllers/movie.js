@@ -46,9 +46,24 @@ export const getMovie = async (req, res, next) => {
 };
 
 export const getMovies = async (req, res, next) => {
+  const { ...others } = req.query;
   try {
-    const movies = await Movie.find();
+    const movies = await Movie.find({ ...others }).limit(req.query.limit);
     res.status(200).json(movies);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const featuredMovie = async (req, res, next) => {
+  const featured = req.query.featured;
+  try {
+    const list = await Promise.all(
+      featured.map((featured) => {
+        return Movie.countDocuments({ featured: featured });
+      })
+    );
+    res.status(200).json(list);
   } catch (err) {
     next(err);
   }
