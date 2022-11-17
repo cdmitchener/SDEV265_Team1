@@ -1,5 +1,7 @@
 import express from "express";
 import {
+  countByRating,
+  countByGenre,
   createMovie,
   updateMovie,
   deleteMovie,
@@ -20,12 +22,14 @@ router.post("/", verifyAdmin, createMovie);
 router.put("/:id", verifyAdmin, updateMovie);
 
 //DELETE
-router.delete("/:id", verifyAdmin, deleteMovie);
+router.delete("/find/:id", verifyAdmin, deleteMovie);
 
 //GET
-router.get("/:id", getMovie);
+router.get("/find/:id", getMovie);
 
 //GET ALL
 router.get("/", getMovies);
+router.get("/countByRating", countByRating);
+router.get("/countByGenre", countByGenre);
 
 export default router;
