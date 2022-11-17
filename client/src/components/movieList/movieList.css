@@ -32,6 +32,7 @@
     padding-left: 10px;
     color: #ececec;
     font-size:20px;
+    text-transform: capitalize;
 }
 
 .mListTitles>h2 {
