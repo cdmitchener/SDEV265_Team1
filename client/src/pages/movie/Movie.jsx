@@ -3,23 +3,26 @@ import Navbar from "../../components/navbar/Navbar"
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 import useFetch from "../../hooks/useFetch"
+import Reserve from "../../components/reserve/Reserve"
 import { useContext, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock, faCircleXmark, faCircleChevronLeft, faCircleChevronRight } from "@fortawesome/free-solid-svg-icons"
-import { useLocation } from "react-router-dom"
-import { SearchContext } from "../../context/AuthContext"
+import { useLocation, useNavigate } from "react-router-dom"
+import { SearchContext } from "../../context/SearchContext"
+import { AuthContext } from "../../context/AuthContext"
 
 export const Movie = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const { data, loading, error } = useFetch(`/movies/find/${id}`);
+  const { user } = useContext(AuthContext)
+  const navigate = useNavigate()
 
-  const { startDate} = useContext(SearchContext);
-
-  console.log(startDate)
+  const { startDate, options } = useContext(SearchContext);
 
   // const images = [
   //   {
@@ -55,6 +58,14 @@ export const Movie = () => {
 
     setSlideNumber(newSlideNumber)
   };
+
+  const handleClick = () => {
+    if(user){
+      setOpenModal(true)
+    }else{
+      navigate("/login")
+    }
+  }
 
   return (
     <div>
@@ -96,11 +107,14 @@ export const Movie = () => {
                   </p>
               </div>
               <div className="movieDetailsTickets">
-                <button>Purchase Tickets</button>
+                For {options.adults} adult(s) and {options.children} child(ren)
+                <button onClick={handleClick}>Purchase Tickets</button>
               </div>
             </div>
           </div>
-        </div>)}
+        </div>
+      )}
+      {openModal && <Reserve setOpen={setOpenModal} movieId={id}/>}
       <Footer />
     </div>
   )

@@ -98,3 +98,17 @@ export const countByGenre = async (req, res, next) => {
     next(err);
   }
 };
+
+export const getMovieTheaters = async (req, res, next) => {
+  try {
+    const movie = await Movie.findById(req.params.id);
+    const list = await Promise.all(
+      movie.theaters.map((theater) => {
+        return Theater.findById(theater);
+      })
+    );
+    res.status(200).json(list);
+  } catch (err) {
+    next(err);
+  }
+};

@@ -4,9 +4,10 @@ import DatePicker from "react-datepicker";
 import { useContext, useState } from "react";
 import { setHours, setMinutes} from "date-fns";
 import { useNavigate } from "react-router-dom";
-import { SearchContext } from "../../context/AuthContext";
+import { SearchContext } from "../../context/SearchContext";
 import "./header.css"
 import "react-datepicker/dist/react-datepicker.css";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({type}) => {
   const [title, setTitle] = useState("");
@@ -21,6 +22,7 @@ const Header = ({type}) => {
   });
 
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext)
 
   const handleOption = (name, operation) => {
     setOptions((prev) => {
@@ -64,7 +66,7 @@ const Header = ({type}) => {
         </div>
         <h1 className="header-title">Discover what it means to watch movies like a SUPERHERO.</h1>
         <p className="header-desc">Become a member today with a free Gotham City Cinemas account</p>
-        <button className="header-btn">Sign in / Register</button>
+        {!user && <button className="header-btn">Sign in / Register</button>}
         { type !== "list" &&
           <>
           <div className="headerSearch">

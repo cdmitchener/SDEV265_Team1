@@ -1,43 +1,61 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 const INITIAL_STATE = {
-  title: undefined,
-  date: undefined,
-  options: {
-    adults: undefined,
-    children: undefined,
-    rating: undefined,
-    genre: undefined,
-    type: undefined,
-  },
+  user: JSON.parse(localStorage.getItem("user")) || null,
+  loading: false,
+  error: null,
 };
 
-export const SearchContext = createContext(INITIAL_STATE);
+export const AuthContext = createContext(INITIAL_STATE);
 
-const searchReducer = (state, action) => {
+const authReducer = (state, action) => {
   switch (action.type) {
-    case "NEW_SEARCH":
-      return action.payload;
-    case "RESET_SEARCH":
-      return INITIAL_STATE;
+    case "LOGIN_START":
+      return {
+        user: null,
+        loading: true,
+        error: null,
+      };
+    case "LOGIN_SUCCESS":
+      return {
+        user: action.payload,
+        loading: false,
+        error: null,
+      };
+    case "LOGIN_FAILURE":
+      return {
+        user: null,
+        loading: false,
+        error: action.payload,
+      };
+    case "LOGOUT":
+      return {
+        user: null,
+        loading: false,
+        error: null,
+      };
     default:
       return state;
   }
 };
 
-export const SearchContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(searchReducer, INITIAL_STATE);
+export const AuthContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(authReducer, INITIAL_STATE);
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(state.user));
+  }, [state.user]);
 
   return (
-    <SearchContext.Provider
+    <AuthContext.Provider
       value={{
-        title: state.title,
-        startDate: state.startDate,
-        options: state.options,
+        user: state.user,
+        loading: state.loading,
+        error: state.error,
         dispatch,
       }}
     >
       {children}
-    </SearchContext.Provider>
+    </AuthContext.Provider>
   );
 };
