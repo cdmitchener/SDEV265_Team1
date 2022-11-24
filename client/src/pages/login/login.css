@@ -5,6 +5,33 @@
     justify-content: center;
     background-color: #101010;
   }
+
+  .cover{
+    width: 30em;
+    height: 35em;
+    position: relative;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    background-color: white;
+    justify-content: space-around;
+    
+    
+  }
+
+  .cover h1{
+    font-size: 70px;
+    position: relative;
+    
+  }
+
+  .cover p{
+    top: -80px;
+    position: relative;
+    font-size: 20px;
+  }
   
   .lContainer {
     display: flex;
@@ -35,3 +62,12 @@
     background-color: #febb02;
     cursor: not-allowed;
   }
+
+  .lButton:hover{
+    opacity: 0.8; 
+ }
+ 
+ .lButton:active{
+     opacity: 0.5;
+     
+ }
