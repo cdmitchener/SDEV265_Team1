@@ -34,3 +34,11 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+.mailInputContainer>button:hover{
+    opacity: 0.8; 
+ }
+ 
+ .mailInputContainer>button:active{
+     opacity: 0.5;
+ }
